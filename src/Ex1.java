@@ -30,21 +30,49 @@ public class Ex1 {
             if (num.charAt(i)=='b')
                 index=i;
         }
+        if (num.charAt(index+1)=='A')
+            base=10;
+        else if (num.charAt(index+1)=='B')
+            base=11;
+        else if (num.charAt(index+1)=='C')
+            base=12;
+        else if (num.charAt(index+1)=='D')
+            base=13;
+        else if (num.charAt(index+1)=='E')
+            base=14;
+        else if (num.charAt(index+1)=='F')
+            base=15;
+        else if (num.charAt(index+1)=='G')
+            base=16;
+        else
+            base= Character.getNumericValue(num.charAt(index+1));
         for (int i=0;i<index;i++)
         {
             x= Character.getNumericValue(num.charAt(i));
-            sum+=x*Math.pow(10,(index-i-1));
+            ans+=x*Math.pow(base,(index-i-1));
         }
-        for (int i=index;i<num.length();i++)
+        if (index==0||ans==0||num.length()==index||num.length()>(index+1))
         {
-
-        }
-        if (num.length()==(index+1)||index==0||sum==0||)
-        {
-            ans = -1;
+            return -1;
          }
         return ans;
     }
+    /**
+     * Calculate the number representation (in basis base)
+     * of the given natural number (represented as an integer).
+     * If num<0 or base is not in [2,16] the function should return "" (the empty String).
+     * @param num the natural number (include 0).
+     * @param base the basis [2,16]
+     * @return a String representing a number (in base) equals to num, or an empty String (in case of wrong input).
+     */
+    public static String int2Number(int num, int base) {
+        String ans = "";
+        if (num<0||base<2||base>16)
+            return ans;
+
+        return ans;
+    }
+
     public static void main(String[] args) {
 
 
