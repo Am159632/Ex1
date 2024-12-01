@@ -15,16 +15,9 @@
 import java.util.Scanner;
 import static java.lang.System.*;
 public class Ex1 {
-    /**
-     * Convert the given number (num) to a decimal representation (as int).
-     * It the given number is not in a valid format returns -1.
-     * @param num a String representing a number in basis [2,16]
-     * @return
-     */
-    public static int number2Int(String num)
+    public static int base(String num)
     {
-        int ans = -1;
-        int index=0,sum = 0,x,base;
+        int index=0,base;
         for (int i=0;i<num.length();i++)
         {
             if (num.charAt(i)=='b')
@@ -46,17 +39,69 @@ public class Ex1 {
             base=16;
         else
             base= Character.getNumericValue(num.charAt(index+1));
+        return base;
+    }
+    public static int digits(String num)
+    {
+        int count=0;
+        for(int i=0;i<num.length();i++)
+        {
+            if (num.charAt(i)=='b')
+                break;
+            count++;
+        }
+        return count;
+    }
+    /**
+     * Convert the given number (num) to a decimal representation (as int).
+     * It the given number is not in a valid format returns -1.
+     * @param num a String representing a number in basis [2,16]
+     * @return
+     */
+    public static int number2Int(String num)
+    {
+        int ans = -1;
+        int index=0,sum = 0,x,base=base(num);
+        for (int i=0;i<num.length();i++)
+        {
+            if (num.charAt(i)=='b')
+                index=i;
+        }
         for (int i=0;i<index;i++)
         {
             x= Character.getNumericValue(num.charAt(i));
             ans+=x*Math.pow(base,(index-i-1));
         }
-        if (index==0||ans==0||num.length()==index||num.length()>(index+1))
+        if (!isNumber(num))
         {
             return -1;
          }
         return ans;
     }
+    /**
+     * This static function checks if the given String (g) is in a valid "number" format.
+     * @param a a String representing a number
+     * @return true iff the given String is in a number format
+     */
+    public static boolean isNumber(String a) {
+        boolean ans = true;
+        int sumN=0,sumB=0,index=0,base=base(a);
+        for (int i=0;i<a.length();i++)
+        {
+            if (a.charAt(i)=='b')
+                index=i;
+        }
+        for (int i=0;i<index;i++)
+        {
+
+        }
+        if (a.charAt(0)=='b'||base<2||index!=(a.length()+1)||a==null)
+        {
+
+        }
+        return ans;
+    }
+
     /**
      * Calculate the number representation (in basis base)
      * of the given natural number (represented as an integer).
@@ -67,14 +112,18 @@ public class Ex1 {
      */
     public static String int2Number(int num, int base) {
         String ans = "";
-        if (num<0||base<2||base>16)
+        int index=0,sum=0;
+        if (num<0||base<2||base>16) {
             return ans;
-
+        }
+        for(int i=0;i<num;i++)
+        {
+            if (Math.pow(base,i)>num)
+                break;
+            index++;
+        }
         return ans;
     }
-
     public static void main(String[] args) {
-
-
     }
 }
