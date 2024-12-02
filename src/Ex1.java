@@ -12,17 +12,12 @@
  * “b2”, “0b1”, “123b”, “1234b11”, “3b3”, “-3b5”, “3 b4”, “GbG”, "", null,
  * You should implement the following static functions:
  */
-import java.util.Scanner;
-import static java.lang.System.*;
+
 public class Ex1 {
     public static int base(String num)
     {
         int index=0,base;
-        for (int i=0;i<num.length();i++)
-        {
-            if (num.charAt(i)=='b')
-                index=i;
-        }
+        index=digits(num);
         if (num.charAt(index+1)=='A')
             base=10;
         else if (num.charAt(index+1)=='B')
@@ -39,14 +34,27 @@ public class Ex1 {
             base=16;
         else
             base= Character.getNumericValue(num.charAt(index+1));
+        if (num.length()!=(index+1)||base<2)
+            base=-1;
         return base;
+    }
+    public static boolean isNum(String num)
+    {
+        int digits=digits(num),base=base(num);
+        boolean ans=true;
+        for(int i=0;i<digits;i++)
+        {
+            if (!Character.isDigit(num.charAt(i))||(Character.getNumericValue(num.charAt(i))>=base))
+                return false;
+        }
+        return ans;
     }
     public static int digits(String num)
     {
         int count=0;
         for(int i=0;i<num.length();i++)
         {
-            if (num.charAt(i)=='b')
+             if (num.charAt(i)=='b')
                 break;
             count++;
         }
@@ -61,16 +69,11 @@ public class Ex1 {
     public static int number2Int(String num)
     {
         int ans = -1;
-        int index=0,sum = 0,x,base=base(num);
-        for (int i=0;i<num.length();i++)
-        {
-            if (num.charAt(i)=='b')
-                index=i;
-        }
-        for (int i=0;i<index;i++)
+        int digits =digits(num),base=base(num),x;
+        for (int i = 0; i< digits; i++)
         {
             x= Character.getNumericValue(num.charAt(i));
-            ans+=x*Math.pow(base,(index-i-1));
+            ans+=x*Math.pow(base,(digits -i-1));
         }
         if (!isNumber(num))
         {
@@ -85,19 +88,15 @@ public class Ex1 {
      */
     public static boolean isNumber(String a) {
         boolean ans = true;
-        int sumN=0,sumB=0,index=0,base=base(a);
+        int digits=digits(a),base=base(a);
         for (int i=0;i<a.length();i++)
         {
-            if (a.charAt(i)=='b')
-                index=i;
+            if (a.charAt(i)=='')
+                ans=false;
         }
-        for (int i=0;i<index;i++)
+        if (a.charAt(0)=='b'||base(a)==-1||a==null||a.isEmpty()||!isNum(a))
         {
-
-        }
-        if (a.charAt(0)=='b'||base<2||index!=(a.length()+1)||a==null)
-        {
-
+            ans=false;
         }
         return ans;
     }
@@ -121,6 +120,58 @@ public class Ex1 {
             if (Math.pow(base,i)>num)
                 break;
             index++;
+        }
+        for(int i=0;i<index;i++)
+        {
+           int x=((int)(num/Math.pow(base,(index-i))));
+            num-= x*(int) Math.pow(base,(index-i));
+            ans+=(char)x;
+        }
+        ans+='b';
+        if (base<10)
+            ans+=(char) base;
+        else if (base==10)
+            ans+='A';
+        else if (base==11)
+            ans+='B';
+        else if (base==12)
+            ans+='C';
+        else if (base==13)
+            ans+='D';
+        else if (base==14)
+            ans+='E';
+        else if (base==15)
+            ans+='F';
+        else if (base==16)
+            ans+='G';
+        return ans;
+    }
+    /**
+     * Checks if the two numbers have the same value.
+     * @param n1 first number
+     * @param n2 second number
+     * @return true iff the two numbers have the same values.
+     */
+    public static boolean equals(String n1, String n2) {
+        boolean ans = true;
+        if (number2Int(n1)!=number2Int(n2))
+            ans=false;
+        return ans;
+    }
+    /**
+     * This static function search for the array index with the largest number (in value).
+     * In case there are more than one maximum - returns the first index.
+     * Note: you can assume that the array is not null and is not empty, yet it may contain null or none-valid numbers (with value -1).
+     * @param arr an array of numbers
+     * @return the index in the array in with the largest number (in value).
+     *
+     */
+    public static int maxIndex(String[] arr) {
+        int ans = 0;
+        for (int i=0;i<arr.length;i++)
+        {
+            if (number2Int(arr[i])>ans)
+                ans=i;
         }
         return ans;
     }
