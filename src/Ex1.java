@@ -1,7 +1,6 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the
 
-import org.junit.jupiter.api.parallel.Resources;
 /**
  * This class represents a simple solution for Ex1.
  * As defined here: https://docs.google.com/document/d/1AJ9wtnL1qdEs4DAKqBlO1bXCM6r6GJ_J/r/edit/edit
@@ -20,6 +19,8 @@ public class Ex1 {
     public static int base(String num)
     {
         int index=num.indexOf('b'),base=-1;
+        if (num.indexOf('b')==-1)
+            return 10;
         if ('A'<=num.charAt(index+1)&&num.charAt(index+1)<='G')
             base=num.charAt(index+1)-'A'+10;
         else if ('2'<=num.charAt(index+1)&&num.charAt(index+1)<='9')
@@ -43,6 +44,8 @@ public class Ex1 {
             x= Character.getNumericValue(num.charAt(i));
             ans+=x*Math.pow(base,(digits-(i+1)));
         }
+        if (num.indexOf('b')==-1)
+            ans= Integer.parseInt(num);
         if (!isNumber(num))
             ans=-1;
         return ans;
@@ -63,7 +66,11 @@ public class Ex1 {
             if (a.charAt(i)>=a.charAt(index+1))
                 ans=false;
         }
-        if ( index==0 || base==-1 || a==null ||a.isEmpty() || a.indexOf('-')!=-1)
+        if (a.indexOf('b')==-1)
+            for (int i=0;i<a.length();i++)
+                if (!Character.isDigit(a.charAt(i)))
+                    return false;
+    if ( index==0 || base==-1 || a==null ||a.isEmpty() || a.indexOf('-')!=-1)
             ans=false;
         return ans;
     }
