@@ -15,6 +15,7 @@ import org.junit.jupiter.api.parallel.Resources;
  * You should implement the following static functions:
  */
 
+
 public class Ex1 {
     public static int base(String num)
     {
