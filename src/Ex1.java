@@ -16,7 +16,7 @@
 public class Ex1 {
     public static int base(String num)
     {
-        int index=0,base;
+        int index=0,base=0;
         index=digits(num);
         if (num.charAt(index+1)=='A')
             base=10;
@@ -32,7 +32,7 @@ public class Ex1 {
             base=15;
         else if (num.charAt(index+1)=='G')
             base=16;
-        else
+        else //2
             base= Character.getNumericValue(num.charAt(index+1));
         if (num.length()!=(index+1)||base<2)
             base=-1;
@@ -44,7 +44,7 @@ public class Ex1 {
         boolean ans=true;
         for(int i=0;i<digits;i++)
         {
-            if (!Character.isDigit(num.charAt(i))||(Character.getNumericValue(num.charAt(i))>=base))
+            if (Character.getNumericValue(num.charAt(i))!=-1 || (Character.getNumericValue(num.charAt(i))>=base))
                 return false;
         }
         return ans;
@@ -73,11 +73,11 @@ public class Ex1 {
         for (int i = 0; i< digits; i++)
         {
             x= Character.getNumericValue(num.charAt(i));
-            ans+=x*Math.pow(base,(digits -i-1));
+            ans+=x*Math.pow(base,(digits-(i+1)));
         }
         if (!isNumber(num))
         {
-            return -1;
+            ans= -1;
          }
         return ans;
     }
@@ -88,13 +88,12 @@ public class Ex1 {
      */
     public static boolean isNumber(String a) {
         boolean ans = true;
-        int digits=digits(a),base=base(a);
         for (int i=0;i<a.length();i++)
         {
-            if (a.charAt(i)=='')
+            if (a.charAt(i)==' ')
                 ans=false;
         }
-        if (a.charAt(0)=='b'||base(a)==-1||a==null||a.isEmpty()||!isNum(a))
+        if (digits(a)==0 || -1 == base(a) || a.equals(null) || !isNum(a))
         {
             ans=false;
         }
@@ -174,7 +173,5 @@ public class Ex1 {
                 ans=i;
         }
         return ans;
-    }
-    public static void main(String[] args) {
     }
 }
