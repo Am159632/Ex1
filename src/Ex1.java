@@ -2,7 +2,6 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the
 
 import org.junit.jupiter.api.parallel.Resources;
-
 /**
  * This class represents a simple solution for Ex1.
  * As defined here: https://docs.google.com/document/d/1AJ9wtnL1qdEs4DAKqBlO1bXCM6r6GJ_J/r/edit/edit
@@ -22,7 +21,7 @@ public class Ex1 {
         int index=num.indexOf('b'),base=-1;
         if ('A'<=num.charAt(index+1)&&num.charAt(index+1)<='G')
             base=num.charAt(index+1)-'A'+10;
-        else
+        else if ('2'<=num.charAt(index+1)&&num.charAt(index+1)<='9')
             base=Character.getNumericValue(num.charAt(index+1));
         if (num.length()!=(index+2)||base<2)
             base=-1;
@@ -55,7 +54,7 @@ public class Ex1 {
      */
     public static boolean isNumber(String a) {
         boolean ans = true;
-        int index=a.indexOf('b'),base=base(a),sum=0;
+        int index=a.indexOf('b'),base=base(a);
         for (int i=0;i<index;i++)
         {
             if (a.charAt(i)==' ')
@@ -63,9 +62,7 @@ public class Ex1 {
             if (a.charAt(i)>=a.charAt(index+1))
                 ans=false;
         }
-        for (int i=0;i<index;i++)
-            sum+=Character.getNumericValue(a.charAt(i));
-        if ( index==0 || base==-1 || a==null ||a.isEmpty() || a.charAt(0)=='-' || sum==0 )
+        if ( index==0 || base==-1 || a==null ||a.isEmpty() || a.indexOf('-')!=-1)
             ans=false;
         return ans;
     }
@@ -94,11 +91,14 @@ public class Ex1 {
         {
            int x=((int)(num/Math.pow(base,(digit -(i+1)))));
             num-= x* Math.pow(base,(digit -(i+1)));
-            ans+=((char)(x +'0')) +"";
+            if (x<10)
+                ans+=((char)(x +'0'));
+            else
+                ans+=((char)(x+'A'-10));
         }
         ans+='b';
         if (base<10)
-            ans+=(char)(base+'0');
+            ans+=((char)(base+'0'));
         else
             ans+=(char)(base+'A'-10);
         return ans;
