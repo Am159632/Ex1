@@ -1,5 +1,8 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutte
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the
+
+import org.junit.jupiter.api.parallel.Resources;
+
 /**
  * This class represents a simple solution for Ex1.
  * As defined here: https://docs.google.com/document/d/1AJ9wtnL1qdEs4DAKqBlO1bXCM6r6GJ_J/r/edit/edit
@@ -16,49 +19,14 @@
 public class Ex1 {
     public static int base(String num)
     {
-        int index=0,base=0;
-        index=digits(num);
-        if (num.charAt(index+1)=='A')
-            base=10;
-        else if (num.charAt(index+1)=='B')
-            base=11;
-        else if (num.charAt(index+1)=='C')
-            base=12;
-        else if (num.charAt(index+1)=='D')
-            base=13;
-        else if (num.charAt(index+1)=='E')
-            base=14;
-        else if (num.charAt(index+1)=='F')
-            base=15;
-        else if (num.charAt(index+1)=='G')
-            base=16;
-        else //2
-            base= Character.getNumericValue(num.charAt(index+1));
-        if (num.length()!=(index+1)||base<2)
+        int index=num.indexOf('b'),base=-1;
+        if ('A'<=num.charAt(index+1)&&num.charAt(index+1)<='G')
+            base=num.charAt(index+1)-'A'+10;
+        else
+            base=Character.getNumericValue(num.charAt(index+1));
+        if (num.length()!=(index+2)||base<2)
             base=-1;
         return base;
-    }
-    public static boolean isNum(String num)
-    {
-        int digits=digits(num),base=base(num);
-        boolean ans=true;
-        for(int i=0;i<digits;i++)
-        {
-            if (Character.getNumericValue(num.charAt(i))!=-1 || (Character.getNumericValue(num.charAt(i))>=base))
-                return false;
-        }
-        return ans;
-    }
-    public static int digits(String num)
-    {
-        int count=0;
-        for(int i=0;i<num.length();i++)
-        {
-             if (num.charAt(i)=='b')
-                break;
-            count++;
-        }
-        return count;
     }
     /**
      * Convert the given number (num) to a decimal representation (as int).
@@ -68,35 +36,37 @@ public class Ex1 {
      */
     public static int number2Int(String num)
     {
-        int ans = -1;
-        int digits =digits(num),base=base(num),x;
+        int ans = 0;
+        int digits =num.indexOf('b'),base=base(num),x;
         for (int i = 0; i< digits; i++)
         {
             x= Character.getNumericValue(num.charAt(i));
             ans+=x*Math.pow(base,(digits-(i+1)));
         }
         if (!isNumber(num))
-        {
-            ans= -1;
-         }
+            ans=-1;
         return ans;
     }
     /**
      * This static function checks if the given String (g) is in a valid "number" format.
      * @param a a String representing a number
      * @return true iff the given String is in a number format
+     *  “0b1”
      */
     public static boolean isNumber(String a) {
         boolean ans = true;
-        for (int i=0;i<a.length();i++)
+        int index=a.indexOf('b'),base=base(a),sum=0;
+        for (int i=0;i<index;i++)
         {
             if (a.charAt(i)==' ')
                 ans=false;
+            if (a.charAt(i)>=a.charAt(index+1))
+                ans=false;
         }
-        if (digits(a)==0 || -1 == base(a) || a.equals(null) || !isNum(a))
-        {
+        for (int i=0;i<index;i++)
+            sum+=Character.getNumericValue(a.charAt(i));
+        if ( index==0 || base==-1 || a==null ||a.isEmpty() || a.charAt(0)=='-' || sum==0 )
             ans=false;
-        }
         return ans;
     }
 
@@ -109,8 +79,8 @@ public class Ex1 {
      * @return a String representing a number (in base) equals to num, or an empty String (in case of wrong input).
      */
     public static String int2Number(int num, int base) {
-        String ans = "";
-        int index=0,sum=0;
+        String ans ="";
+        int digit =0;
         if (num<0||base<2||base>16) {
             return ans;
         }
@@ -118,31 +88,19 @@ public class Ex1 {
         {
             if (Math.pow(base,i)>num)
                 break;
-            index++;
+            digit++;
         }
-        for(int i=0;i<index;i++)
+        for(int i = 0; i< digit; i++)
         {
-           int x=((int)(num/Math.pow(base,(index-i))));
-            num-= x*(int) Math.pow(base,(index-i));
-            ans+=(char)x;
+           int x=((int)(num/Math.pow(base,(digit -(i+1)))));
+            num-= x* Math.pow(base,(digit -(i+1)));
+            ans+=((char)(x +'0')) +"";
         }
         ans+='b';
         if (base<10)
-            ans+=(char) base;
-        else if (base==10)
-            ans+='A';
-        else if (base==11)
-            ans+='B';
-        else if (base==12)
-            ans+='C';
-        else if (base==13)
-            ans+='D';
-        else if (base==14)
-            ans+='E';
-        else if (base==15)
-            ans+='F';
-        else if (base==16)
-            ans+='G';
+            ans+=(char)(base+'0');
+        else
+            ans+=(char)(base+'A'-10);
         return ans;
     }
     /**
@@ -163,14 +121,16 @@ public class Ex1 {
      * Note: you can assume that the array is not null and is not empty, yet it may contain null or none-valid numbers (with value -1).
      * @param arr an array of numbers
      * @return the index in the array in with the largest number (in value).
-     *
      */
     public static int maxIndex(String[] arr) {
-        int ans = 0;
+        int ans =Integer.MIN_VALUE;
+        String max=arr[0];
         for (int i=0;i<arr.length;i++)
         {
-            if (number2Int(arr[i])>ans)
-                ans=i;
+            if (number2Int(arr[i])>number2Int(max)) {
+                ans = i;
+                max = arr[i];
+            }
         }
         return ans;
     }
