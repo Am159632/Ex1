@@ -59,11 +59,11 @@ public class Ex1 {
     public static boolean isNumber(String a) {
         boolean ans = true,letter=true,digit=false;
         int index=a.indexOf('b'),base=base(a);
-        if (a.indexOf('b')==-1) {
+        if (a.indexOf('b')<=-1) {
             for (int i = 0; i < a.length(); i++)
-                if (a.charAt(i) >= 'A' && a.charAt(i) <= 'G')
-                    return false;//מצב של ספרות בלי בסיס
-            return true; //מצב של מספרים בלי בסיס
+                if (!(a.charAt(i) >= 'A' && a.charAt(i) <= 'G'))
+                    return true;//מצב של ספרות בלי בסיס
+            return false; //מצב של אותיות/סימנים בלי בסיס
         }
         for (int i = 0; i < a.length(); i++) {
             if ((a.charAt(i)<'A'&&a.charAt(i)>'G'))
