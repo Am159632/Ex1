@@ -44,8 +44,8 @@ public class Ex1 {
             x= Character.getNumericValue(num.charAt(i));
             ans+=x*Math.pow(base,(digits-(i+1)));
         }
-        if (num.indexOf('b')==-1)
-            ans= Integer.parseInt(num);
+        if (num.indexOf('b')==-1 && isNumber(num))
+                ans=Integer.parseInt(num);
         if (!isNumber(num))
             ans=-1;
         return ans;
@@ -57,20 +57,30 @@ public class Ex1 {
      *  “0b1”
      */
     public static boolean isNumber(String a) {
-        boolean ans = true;
+        boolean ans = true,letter=true,digit=false;
         int index=a.indexOf('b'),base=base(a);
+        if (a.indexOf('b')==-1) {
+            for (int i = 0; i < a.length(); i++)
+                if (a.charAt(i) >= 'A' && a.charAt(i) <= 'G')
+                    return false;//מצב של ספרות בלי בסיס
+            return true; //מצב של מספרים בלי בסיס
+        }
+        for (int i = 0; i < a.length(); i++) {
+            if ((a.charAt(i)<'A'&&a.charAt(i)>'G'))
+                letter=false;
+            if ((a.charAt(i)<'0'&&a.charAt(i)>'9')&&a.charAt(i)!='b')
+                digit=false;
+            if (!letter&&!digit)
+                return false;//מצב בו יש תו שלא 0-9 או A-G או b
+            if(a.charAt(i)==' ')
+                return false;
+        }
         for (int i=0;i<index;i++)
         {
-            if (a.charAt(i)==' ')
-                ans=false;
             if (a.charAt(i)>=a.charAt(index+1))
-                ans=false;
+                return false;
         }
-        if (a.indexOf('b')==-1)
-            for (int i=0;i<a.length();i++)
-                if (!Character.isDigit(a.charAt(i)))
-                    return false;
-    if ( index==0 || base==-1 || a==null ||a.isEmpty() || a.indexOf('-')!=-1)
+    if ( index==0 || base==-1 || a==null ||a.isEmpty())
             ans=false;
         return ans;
     }
@@ -131,13 +141,12 @@ public class Ex1 {
      * @return the index in the array in with the largest number (in value).
      */
     public static int maxIndex(String[] arr) {
-        int ans =Integer.MIN_VALUE;
-        String max=arr[0];
+        int ans =0,max=number2Int(arr[0]);
         for (int i=0;i<arr.length;i++)
         {
-            if (number2Int(arr[i])>number2Int(max)) {
+            if (number2Int(arr[i])>max) {
                 ans = i;
-                max = arr[i];
+                max = number2Int(arr[i]);
             }
         }
         return ans;
