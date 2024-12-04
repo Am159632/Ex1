@@ -9,20 +9,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class Ex1Test {
     @Test
-    void isBaseTest(){
-        String[] good = {"0b3","12345","GbF","b2","-2bG","1F","G23 bC",""};
-        for(int i=0;i<good.length;i++) {
-            int ok = Ex1.base(good[i]);
-            assertTrue(ok!=-1);
-        }
-        String[] not_good = {"-2b12","123b-1","0b1"};
-        for(int i=0;i<not_good.length;i=i+1) {
-            int not_ok = Ex1.base(not_good[i]);
-            assertEquals(-1,not_ok);
-        }
-    }
-
-    @Test
     void computeNumberTest() {
         String s2 = "1011b2";
         int v = Ex1.number2Int(s2);
@@ -53,8 +39,19 @@ public class Ex1Test {
     }
     @Test
     void maxIndexTest() {
-        // implement this test
+    }
+    @Test
+    void isBaseTest(){
+        String[] good = {"0b3","12345","GbF","b2","-2bG","1F","G23 bC",""};
+        for(int i=0;i<good.length;i++) {
+            int ok = Ex1.base(good[i]);
+            assertTrue(ok!=-1);
+        }
+        String[] not_good = {"-2b12","123b-1","0b1"};
+        for(int i=0;i<not_good.length;i=i+1) {
+            int not_ok = Ex1.base(not_good[i]);
+            assertEquals(-1,not_ok);
+        }
     }
 
-    // Add additional test functions - test as much as you can.
 }
