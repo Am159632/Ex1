@@ -22,21 +22,26 @@ public class Ex1Main {
                         if (Ex1.isNumber(num2)) {
                             System.out.println("Enter a base for output: (a number [2,16]");
                             int base = sc.nextInt();
-                            String sum = Ex1.int2Number((Ex1.number2Int(num1) + Ex1.number2Int(num2)), base);
-                            String multi = Ex1.int2Number((Ex1.number2Int(num1) * Ex1.number2Int(num2)), base);
-                            System.out.println(num1 + " + " + num2 + " = " + sum);
-                            System.out.println(num1 + " * " + num2 + " = " + multi);
-                            String[] a = new String[]{num1, num2, sum, multi};
-                            System.out.println("Max number over [" + num1 + "," + num2 + "," + sum + "," + multi + "] is: " + a[Ex1.maxIndex(a)]);
-                        } else {
+                            if (base >= 2 && base <= 16) {
+                                String sum = Ex1.int2Number((Ex1.number2Int(num1) + Ex1.number2Int(num2)), base);
+                                String multi = Ex1.int2Number((Ex1.number2Int(num1) * Ex1.number2Int(num2)), base);
+                                System.out.println(num1 + " + " + num2 + " = " + sum);
+                                System.out.println(num1 + " * " + num2 + " = " + multi);
+                                String[] a = {num1, num2, sum, multi};
+                                System.out.println("Max number over [" + num1 + "," + num2 + "," + sum + "," + multi + "] is: " + a[Ex1.maxIndex(a)]);
+                            } else {
+                                System.out.println("ERR: wrong base, should be [2,16], got (" + base + ")");
+                            }
+                        }
+                        else{
                             System.out.println("ERR: num2 is in the wrong format! (" + num2 + ")");
                         }
+                    } else {
+                        System.out.println("ERR: num1 is in the wrong format! (" + num1 + ")");
                     }
-                } else {
-                    System.out.println("ERR: num1 is in the wrong format! (" + num1 + ")");
                 }
             }
         }
         System.out.println("quiting now...");
-}
+    }
 }

@@ -39,15 +39,19 @@ public class Ex1 {
     {
         int ans = 0;
         int digits =num.indexOf('b'),base=base(num),x;
+        if (digits==-1)
+            if (isNumber(num)) {
+                digits = num.length();
+            }else {
+                ans=-1;
+            }
         for (int i = 0; i< digits; i++)
         {
             x= Character.getNumericValue(num.charAt(i));
             ans+=x*Math.pow(base,(digits-(i+1)));
         }
-        if (num.indexOf('b')==-1 && isNumber(num))
-                ans=Integer.parseInt(num);
-        if (!isNumber(num))
-            ans=-1;
+        if  (!isNumber(num))
+            ans= -1;
         return ans;
     }
     /**
@@ -59,11 +63,11 @@ public class Ex1 {
     public static boolean isNumber(String a) {
         boolean ans = true,letter=true,digit=false;
         int index=a.indexOf('b'),base=base(a);
-        if (a.indexOf('b')<=-1) {
+        if (a.indexOf('b')==-1) {
             for (int i = 0; i < a.length(); i++)
-                if (!(a.charAt(i) >= 'A' && a.charAt(i) <= 'G'))
-                    return true;//מצב של ספרות בלי בסיס
-            return false; //מצב של אותיות/סימנים בלי בסיס
+                if (!(a.charAt(i) >= '0' && a.charAt(i) <= '9')||a.charAt(i)==' ')
+                    return false;//מצב של אותיות/סימנים בלי בסיס
+            return true;//מצב של ספרות בלי בסיס
         }
         for (int i = 0; i < a.length(); i++) {
             if ((a.charAt(i)<'A'&&a.charAt(i)>'G'))
