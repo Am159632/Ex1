@@ -7,9 +7,6 @@
     <list default="true" id="6b1755ae-4610-423b-bfc5-92bcabde1c3f" name="Changes" comment="Ex1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ex1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex1Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex1Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex1Sol.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex1Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +65,7 @@
       <recent name="C:\Users\asafm\IdeaProjects\Ex1\src" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Ex1Test">
+  <component name="RunManager" selected="JAR Application.Ex1Sol .jar">
     <configuration name="Ex1Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Ex1Main" />
       <module name="Ex1" />
@@ -101,9 +98,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Ex1Test" />
-        <item itemvalue="Application.Ex1Main" />
         <item itemvalue="JAR Application.Ex1Sol .jar" />
+        <item itemvalue="Application.Ex1Main" />
+        <item itemvalue="JUnit.Ex1Test" />
         <item itemvalue="JUnit.Ex1Test.isBasisNumberTest" />
       </list>
     </recent_temporary>
@@ -213,7 +210,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1733355959365</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL‎-00013" summary="Ex1">
+      <option name="closed" value="true" />
+      <created>1733407635752</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL‎-00013" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1733407635752</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

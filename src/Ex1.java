@@ -14,7 +14,11 @@
  * You should implement the following static functions:
  */
 
-
+/**
+ * Check the value of the base of the number,
+ * @param num a String representing a number.
+ * @return the given number's base and if it is not in a valid format returns -1.
+ */
 public class Ex1 {
     public static int base(String num)
     {
