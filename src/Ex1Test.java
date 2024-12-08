@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * This JUnit class represents a very partial test class for Ex1.
- * Make sure you complete all the needed JUnits
  */
 public class Ex1Test {
     @Test
@@ -58,7 +57,7 @@ public class Ex1Test {
         assertTrue(max2==max3);
     }
     @Test
-    void isBaseTest(){
+    void baseTest(){
         String[] good = {"0b3","12345","GbF","b2","-2bG","1F","G23 bC",""};
         for(int i=0;i<good.length;i++) {
             int ok = Ex1.base(good[i]);
@@ -69,6 +68,7 @@ public class Ex1Test {
             int not_ok = Ex1.base(not_good[i]);
             assertEquals(not_ok,-1);
         }
+        assertEquals(10,Ex1.base("12345"));
     }
 
 }

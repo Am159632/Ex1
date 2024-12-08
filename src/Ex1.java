@@ -23,13 +23,13 @@ public class Ex1 {
     public static int base(String num)
     {
         int index=num.indexOf('b'),base=-1;
-        if (num.indexOf('b')==-1)
+        if (num.indexOf('b')==-1) //if just a number without b
             return 10;
-        if ('A'<=num.charAt(index+1)&&num.charAt(index+1)<='G')
+        if ('A'<=num.charAt(index+1)&&num.charAt(index+1)<='G') //if the base is in digit(10-16)
             base=num.charAt(index+1)-'A'+10;
-        else if ('2'<=num.charAt(index+1)&&num.charAt(index+1)<='9')
+        else if ('2'<=num.charAt(index+1)&&num.charAt(index+1)<='9') // if the base is number(0-9)
             base=Character.getNumericValue(num.charAt(index+1));
-        if (num.length()!=(index+2)||base<2)
+        if (num.length()!=(index+2)) //if we have more than one char for the base
             base=-1;
         return base;
     }
@@ -43,16 +43,14 @@ public class Ex1 {
     {
         int ans = 0;
         int digits =num.indexOf('b'),base=base(num),x;
-        if (digits==-1)
+        if (digits==-1) //regular number, without b
             if (isNumber(num)) {
                 digits = num.length();
-            }else {
-                ans=-1;
             }
         for (int i = 0; i< digits; i++)
         {
             x= Character.getNumericValue(num.charAt(i));
-            ans+=x*Math.pow(base,(digits-(i+1)));
+            ans+=x*Math.pow(base,(digits-(i+1))); //every digit, power his index
         }
         if  (!isNumber(num))
             ans= -1;
@@ -67,32 +65,31 @@ public class Ex1 {
     public static boolean isNumber(String a) {
         boolean ans = true,letter=true,digit=false;
         int index=a.indexOf('b'),base=base(a);
-        if (a.indexOf('b')==-1) {
+        if (a.indexOf('b')==-1) { //regular number, without b
             for (int i = 0; i < a.length(); i++)
                 if (!(a.charAt(i) >= '0' && a.charAt(i) <= '9')||a.charAt(i)==' ')
-                    return false;//מצב של אותיות/סימנים בלי בסיס
-            return true;//מצב של ספרות בלי בסיס
+                    return false; //letter in base 10 is invalid number
+            return true; //if only digit, valid number
         }
         for (int i = 0; i < a.length(); i++) {
-            if ((a.charAt(i)<'A'&&a.charAt(i)>'G'))
+            if ((a.charAt(i)<'A'&&a.charAt(i)>'G')&&a.charAt(i)!='b')
                 letter=false;
-            if ((a.charAt(i)<'0'&&a.charAt(i)>'9')&&a.charAt(i)!='b')
+            if ((a.charAt(i)<'0'&&a.charAt(i)>'9'))
                 digit=false;
             if (!letter&&!digit)
-                return false;//מצב בו יש תו שלא 0-9 או A-G או b
-            if(a.charAt(i)==' ')
                 return false;
+            if(a.charAt(i)==' ')
+                return false;//if one of the chars in the string is not in A-G/b/0-9/space
         }
         for (int i=0;i<index;i++)
         {
             if (a.charAt(i)>=a.charAt(index+1))
-                return false;
+                return false;//if the value of the char bigger than the base
         }
-    if ( index==0 || base==-1 || a==null ||a.isEmpty())
+    if ( index==0 || base==-1 || a==null ||a.isEmpty())//if 'b' is the first char/base invalid/null/""
             ans=false;
         return ans;
     }
-
     /**
      * Calculate the number representation (in basis base)
      * of the given natural number (represented as an integer).
@@ -104,29 +101,29 @@ public class Ex1 {
     public static String int2Number(int num, int base) {
         String ans ="";
         int digit =0;
-        if (num<0||base<2||base>16) {
+        if (num<0||base<2||base>16) {//if the num/base invalid
             return ans;
         }
         for(int i=0;i<num;i++)
         {
-            if (Math.pow(base,i)>num)
+            if (Math.pow(base,i)>num)//check how much digits the number have(until base^i>num)
                 break;
             digit++;
         }
         for(int i = 0; i< digit; i++)
         {
-           int x=((int)(num/Math.pow(base,(digit -(i+1)))));
-            num-= x* Math.pow(base,(digit -(i+1)));
+           int x=((int)(num/Math.pow(base,(digit -(i+1)))));//the valus of the digit in this index
+            num-= x* Math.pow(base,(digit -(i+1)));//subtracts from it
             if (x<10)
-                ans+=((char)(x +'0'));
+                ans+=((char)(x +'0'));//add the digit in case it is <10
             else
-                ans+=((char)(x+'A'-10));
+                ans+=((char)(x+'A'-10));//add the letter in case it is >10
         }
         ans+='b';
         if (base<10)
-            ans+=((char)(base+'0'));
+            ans+=((char)(base+'0'));//add the base in case it is <10
         else
-            ans+=(char)(base+'A'-10);
+            ans+=(char)(base+'A'-10);//add the base in case it is >10
         return ans;
     }
     /**
@@ -137,7 +134,7 @@ public class Ex1 {
      */
     public static boolean equals(String n1, String n2) {
         boolean ans = true;
-        if (number2Int(n1)!=number2Int(n2))
+        if (number2Int(n1)!=number2Int(n2))//if the value(in int) of the strings is equals
             ans=false;
         return ans;
     }
@@ -152,7 +149,7 @@ public class Ex1 {
         int ans =0,max=number2Int(arr[0]);
         for (int i=0;i<arr.length;i++)
         {
-            if (number2Int(arr[i])>max) {
+            if (number2Int(arr[i])>max) {//if the value of the String is bigger than max
                 ans = i;
                 max = number2Int(arr[i]);
             }
