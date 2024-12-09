@@ -13,3 +13,54 @@ and go to the beginning of the loop to scan the num1.
 Now, the program is building an array of String that his length is 4 and contains numbers
 (num1,num2,sum of the 2 numbers in the base we put,and the multiplication)
 and print the max value number in this format:"Max number over [num1,num2,sum,multi] is: " + (the number is String).
+
+# Ex1 Program
+
+This program is an input/output application that uses JUnit to perform tests on the `Ex1` class. Below is an explanation of the program and how to use it.
+
+## Main Classes
+
+### Ex1Main
+This is the main class of the program, allowing the user to input numbers in strings and perform arithmetic operations on them. The program allows the user to enter two numbers and then perform addition and multiplication of these numbers in a user-specified base.
+
+#### Example Usage
+1. Running the program and using input:
+    - Enter a string as number #1 (or "quit" to end the program).
+    - Enter a string as number #2 (or "quit" to end the program).
+    - Enter a base for output (a number between 2 and 16).
+
+2. Example Input:
+    ```plaintext
+    Enter a string as number#1 (or "quit" to end the program):
+    1011b2
+    num1= 1011b2 is number: true , value: 11
+    Enter a string as number#2 (or "quit" to end the program):
+    1101b2
+    num2= 1101b2 is number: true , value: 13
+    Enter a base for output: (a number [2,16])
+    10
+    1011b2 + 1101b2 = 24
+    1011b2 * 1101b2 = 143
+    Max number over [1011b2,1101b2,24,143] is: 143
+    ```
+
+### Ex1Test
+This is the test class using JUnit to perform tests on the `Ex1` class. The class includes several tests such as:
+- `computeNumberTest`: Tests the conversion of numbers between different bases and checks the accuracy of the conversions.
+- `isBasisNumberTest`: Tests the validation of different string formats representing numbers.
+- `int2NumberTest`: Tests the conversion of an integer to a string in a specified base.
+- `maxIndexTest`: Tests finding the maximum value among numbers in an array of strings.
+- `baseTest`: Tests returning the base of a string number.
+
+## Dependencies
+The program uses JUnit for testing. Ensure JUnit is included in your project.
+
+### Maven
+```xml
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-engine</artifactId>
+    <version>5.7.0</version>
+    <scope>test</scope>
+</dependency>
+
