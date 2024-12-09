@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b1755ae-4610-423b-bfc5-92bcabde1c3f" name="Changes" comment="Ex1">
-      <change afterPath="$PROJECT_DIR$/src/Ex1.txt" afterDir="false" />
+    <list default="true" id="6b1755ae-4610-423b-bfc5-92bcabde1c3f" name="Changes" comment="Ex1+readme+Ex1.txt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignments/ex1/Ex1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignments/ex1/Ex1Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex1Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignments/ex1/Ex1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex1Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ex1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignments/ex1/Ex1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ex1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignments/ex1/Ex1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ex1Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignments/ex1/Ex1Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ex1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignments/ex1/Ex1Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReadMe.Ex1" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignments/ex1/ReadMe.Ex1" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,11 +77,17 @@
       <recent name="C:\Users\asafm\IdeaProjects\Ex1\src" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Ex1Test.baseTest">
-    <configuration name="Ex1Test (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.Ex1Test">
+    <configuration name="Ex1Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex1" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Ex1Test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignments.ex1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignments.ex1" />
+      <option name="MAIN_CLASS_NAME" value="assignments.ex1.Ex1Test" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -88,19 +95,9 @@
     </configuration>
     <configuration name="Ex1Test.baseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex1" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Ex1Test" />
+      <option name="PACKAGE_NAME" value="assignments.ex1" />
+      <option name="MAIN_CLASS_NAME" value="assignments.ex1.Ex1Test" />
       <option name="METHOD_NAME" value="baseTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Ex1Test.int2NumberTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Ex1" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Ex1Test" />
-      <option name="METHOD_NAME" value="int2NumberTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -108,8 +105,8 @@
     </configuration>
     <configuration name="Ex1Test.maxIndexTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex1" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Ex1Test" />
+      <option name="PACKAGE_NAME" value="assignments.ex1" />
+      <option name="MAIN_CLASS_NAME" value="assignments.ex1.Ex1Test" />
       <option name="METHOD_NAME" value="maxIndexTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -118,8 +115,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Ex1Test (1)" />
-        <item itemvalue="JUnit.Ex1Test.int2NumberTest" />
+        <item itemvalue="JUnit.Ex1Test" />
         <item itemvalue="JUnit.Ex1Test.maxIndexTest" />
         <item itemvalue="JUnit.Ex1Test.baseTest" />
       </list>
@@ -270,7 +266,31 @@
       <option name="project" value="LOCAL‎" />
       <updated>1733754816703</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL‎-00018" summary="Ex1">
+      <option name="closed" value="true" />
+      <created>1733756194256</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL‎-00018" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1733756194256</updated>
+    </task>
+    <task id="LOCAL‎-00019" summary="Ex1">
+      <option name="closed" value="true" />
+      <created>1733756268200</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL‎-00019" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1733756268200</updated>
+    </task>
+    <task id="LOCAL‎-00020" summary="Ex1+readme+Ex1.txt">
+      <option name="closed" value="true" />
+      <created>1733756586598</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL‎-00020" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1733756586598</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -287,7 +307,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="23124" />
     <MESSAGE value="Ex1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ex1" />
+    <MESSAGE value="Ex1+readme+Ex1.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ex1+readme+Ex1.txt" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Ex1$Ex1Test.ic" NAME="Ex1Test Coverage Results" MODIFIED="1733249144548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

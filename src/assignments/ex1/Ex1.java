@@ -1,5 +1,5 @@
-/**
- * This class represents a simple solution for Ex1.Ex1.
+package assignments.ex1; /**
+ * This class represents a simple solution for assignments.ex1.Ex1.assignments.ex1.Ex1.
  * As defined here: https://docs.google.com/document/d/1AJ9wtnL1qdEs4DAKqBlO1bXCM6r6GJ_J/r/edit/edit
  * In this assignment, we will design a number formatting converter and calculator.
  * In general, we will use Strings as numbers over basis of binary till Hexa.
