@@ -1,5 +1,4 @@
-package assignments.ex1;//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the
+package assignments.ex1;
 
 /**
  * This class represents a simple solution for Ex1.Ex1.
