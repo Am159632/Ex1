@@ -1,0 +1,15 @@
+The Ex1.Main is working in loop while num1,num2 that we scanned are nou equals to "quit".
+The progran is scan a number (num1) in String.If num1 is "quit" the program ends the loop and printing:"quiting now...".
+but if not it print num1 in this format:
+"num1= " + num1 + " is number: " +(true/false if number) + " , value: " + [his value (-1 if invalid)].
+If num1 is invalid number the program is back to scan the first number. If valid number,it scans the second number (num2)
+and do the same.
+If num1 and num2 are valid numbers the program asked to scan int number between 2 to 16
+and print the sum and the multiplication of num1 and num2 in the base we put in this format:
+num1 + " + " + num2 + " = " + (result)
+num1 + " * " + num2 + " = " + (result)
+If the base we put don't between [2,16] the ptogram will print:"ERR: wrong base, should be [2,16], got (base)"
+and go to the beginning of the loop to scan the num1.
+Now, the program is building an array of String that his length is 4 and contains numbers
+(num1,num2,sum of the 2 numbers in the base we put,and the multiplication)
+and print the max value number in this format:"Max number over [num1,num2,sum,multi] is: " + (the number is String).
