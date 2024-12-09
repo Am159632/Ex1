@@ -11,7 +11,7 @@ public class Ex1Main {
         String num1 = "", num2 = "";
         while (!num1.equals("quit") && !num2.equals("quit")) {
             System.out.println();
-            System.out.println("assignments.ex1.Ex1.assignments.ex1.Ex1 class solution:");
+            System.out.println("Ex1 class solution:");
             System.out.println("Enter a string as number#1 (or \"quit\" to end the program):");
             num1 = sc.next();
             if (!num1.equals("quit")) {

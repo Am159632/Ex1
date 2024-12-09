@@ -64,3 +64,34 @@ The program uses JUnit for testing. Ensure JUnit is included in your project.
     <scope>test</scope>
 </dependency>
 
+# README for Assignment: Number Converter and Calculator
+
+This project provides a Java program for handling numbers in bases [2,16]. It supports:
+1. **Validation**: Checks if a number string is in a valid format.
+2. **Conversion**: Converts numbers between bases (e.g., binary to decimal).
+3. **Arithmetic**: Performs addition and multiplication of numbers in various bases.
+4. **Utilities**: Determines number base, equality, and finds the maximum value in an array.
+
+Files:
+- `Ex1.java`: Implements the logic for conversion, validation, and operations.
+- `Ex1Main.java`: A console-based program that lets users input two numbers, validate them, perform arithmetic operations, and find the maximum among results.
+- `Ex1Test.java`: JUnit tests for validating the implementation.
+
+
+#Ex1 - Number Formatting Converter and Calculator
+
+## Overview
+This project implements a number formatting converter and calculator supporting bases [2-16]. Numbers are represented as `<number><b><base>` (e.g., `101b2`, `A1b16`). Invalid formats (e.g., `123b`, `0b1`) are rejected.
+
+## Features
+1. Validate number formats and bases.
+2. Convert numbers between bases and decimal.
+3. Perform addition and multiplication on numbers.
+4. Find the maximum number in a list.
+
+## Main Functionality
+The `Ex1Main` class provides a CLI that:
+- Accepts numbers in custom formats and validates them.
+- Performs addition and multiplication, displaying results in a user-defined base.
+- Identifies the maximum value from computed results.
+

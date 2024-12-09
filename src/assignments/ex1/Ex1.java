@@ -1,4 +1,5 @@
-package assignments.ex1; /**
+package assignments.ex1;
+/**
  * This class represents a simple solution for assignments.ex1.Ex1.assignments.ex1.Ex1.
  * As defined here: https://docs.google.com/document/d/1AJ9wtnL1qdEs4DAKqBlO1bXCM6r6GJ_J/r/edit/edit
  * In this assignment, we will design a number formatting converter and calculator.
@@ -13,18 +14,18 @@ package assignments.ex1; /**
 
 /**
  * Check the value of the base of the number,
- * @param num a String representing a number.
+ * @param num String representing a number.
  * @return the given number's base and if it is not in a valid format returns -1.
  */
 public class Ex1 {
     public static int base(String num)
     {
-        int index=num.indexOf('b'),base=-1;
+        int index= num.indexOf('b'),base=-1;
         if (num.indexOf('b')==-1) //if just a number without b
             return 10;
-        if ('A'<=num.charAt(index+1)&&num.charAt(index+1)<='G') //if the base is in digit(10-16)
-            base=num.charAt(index+1)-'A'+10;
-        else if ('2'<=num.charAt(index+1)&&num.charAt(index+1)<='9') // if the base is number(0-9)
+        if ('A'<= num.charAt(index+1)&& num.charAt(index+1)<='G') //if the base is in digit(10-16)
+            base= num.charAt(index+1)-'A'+10;
+        else if ('2'<= num.charAt(index+1)&& num.charAt(index+1)<='9') // if the base is number(0-9)
             base=Character.getNumericValue(num.charAt(index+1));
         if (num.length()!=(index+2)) //if we have more than one char for the base
             base=-1;
