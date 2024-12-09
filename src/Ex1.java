@@ -1,5 +1,3 @@
-package assignments.ex1;
-
 /**
  * This class represents a simple solution for Ex1.Ex1.
  * As defined here: https://docs.google.com/document/d/1AJ9wtnL1qdEs4DAKqBlO1bXCM6r6GJ_J/r/edit/edit
