@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b1755ae-4610-423b-bfc5-92bcabde1c3f" name="Changes" comment="tikun readme">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6b1755ae-4610-423b-bfc5-92bcabde1c3f" name="Changes" comment="tikun isNumber(b is last char)">
       <change beforePath="$PROJECT_DIR$/src/assignments/ex1/Ex1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignments/ex1/Ex1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -299,7 +298,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1733767850572</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL‎-00023" summary="tikun isNumber(b is last char)">
+      <option name="closed" value="true" />
+      <created>1733768778824</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL‎-00023" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1733768778825</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -319,21 +326,12 @@
     <MESSAGE value="Ex1+readme+Ex1.txt" />
     <MESSAGE value="Ex1+readme+Ex1.txt+package" />
     <MESSAGE value="tikun readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="tikun readme" />
+    <MESSAGE value="tikun isNumber(b is last char)" />
+    <option name="LAST_COMMIT_MESSAGE" value="tikun isNumber(b is last char)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/assignments/ex1/Ex1.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/assignments/ex1/Ex1.java</url>
-          <line>64</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/assignments/ex1/Ex1Main.java</url>
           <line>17</line>

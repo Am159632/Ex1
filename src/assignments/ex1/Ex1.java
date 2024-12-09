@@ -21,7 +21,7 @@ public class Ex1 {
     public static int base(String num)
     {
         int index= num.indexOf('b'),base=-1;
-        if (num.length()!=(index+2)) //if we have more than one char for the base
+        if (num.length()!=(index+2)) //if we have more/less than one char for the base
             return -1;
         if (num.indexOf('b')==-1) //if just a number without b
             return 10;
@@ -63,14 +63,14 @@ public class Ex1 {
     public static boolean isNumber(String a) {
         boolean ans = true,letter=true,digit=false;
         int index=a.indexOf('b'),base=base(a);
+        if (base==-1)
+            return false;
         if (a.indexOf('b')==-1) { //regular number, without b
             for (int i = 0; i < a.length(); i++)
                 if (!(a.charAt(i) >= '0' && a.charAt(i) <= '9')||a.charAt(i)==' ')
                     return false; //letter in base 10 is invalid number
             return true; //if only digit, valid number
         }
-        if ((index+1)==a.length())
-            return false;//if 'b' is the last char
         for (int i = 0; i < a.length(); i++) {
             if ((a.charAt(i)<'A'&&a.charAt(i)>'G')&&a.charAt(i)!='b')
                 letter=false;
@@ -86,7 +86,7 @@ public class Ex1 {
             if (a.charAt(i)>=a.charAt(index+1))
                 return false;//if the value of the char bigger than the base
         }
-    if ( index==0 || base==-1 || a==null ||a.isEmpty() )//if 'b' is the first char/base invalid/null/""
+        if ( index==0 || a==null ||a.isEmpty() )//if 'b' is the first char/null/empty
             ans=false;
         return ans;
     }
