@@ -76,10 +76,8 @@ public class Ex1 {
                 letter=false;
             if ((a.charAt(i)<'0'&&a.charAt(i)>'9'))
                 digit=false;
-            if (!letter&&!digit)
+            if (!letter&&!digit||a.charAt(i)==' ')//if one of the chars in the string is not in A-G/b/0-9/space
                 return false;
-            if(a.charAt(i)==' ')
-                return false;//if one of the chars in the string is not in A-G/b/0-9/space
         }
         for (int i=0;i<index;i++)
         {
