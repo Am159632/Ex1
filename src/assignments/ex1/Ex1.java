@@ -12,12 +12,12 @@ package assignments.ex1;
  * You should implement the following static functions:
  */
 
-/**
- * Check the value of the base of the number,
- * @param num String representing a number.
- * @return the given number's base and if it is not in a valid format returns -1.
- */
 public class Ex1 {
+    /**
+     * Check the value of the base of the number,
+     * @param num String representing a number.
+     * @return the given number's base and if it is not in a valid format returns -1.
+     */
     public static int base(String num)
     {
         int index= num.indexOf('b'),base=-1;
@@ -84,7 +84,7 @@ public class Ex1 {
             if (a.charAt(i)>=a.charAt(index+1))
                 return false;//if the value of the char bigger than the base
         }
-        if ( index==0 || a==null ||a.isEmpty() )//if 'b' is the first char/null/empty
+        if ( index==0 || a==null || a.isEmpty())//if 'b' is the first char/null/empty
             ans=false;
         return ans;
     }

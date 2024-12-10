@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b1755ae-4610-423b-bfc5-92bcabde1c3f" name="Changes" comment="tikun isNumber(b is last char)">
+    <list default="true" id="6b1755ae-4610-423b-bfc5-92bcabde1c3f" name="Changes" comment="tikun (in case of just number)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assignments/ex1/Ex1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignments/ex1/Ex1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignments/ex1/Ex1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignments/ex1/Ex1Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +74,7 @@
       <recent name="C:\Users\asafm\IdeaProjects\Ex1\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Ex1Main">
+  <component name="RunManager" selected="JUnit.Ex1Test">
     <configuration name="Ex1Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="assignments.ex1.Ex1Main" />
       <module name="Ex1" />
@@ -108,8 +109,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Ex1Main" />
         <item itemvalue="JUnit.Ex1Test" />
+        <item itemvalue="Application.Ex1Main" />
         <item itemvalue="JAR Application.Ex1Sol .jar" />
       </list>
     </recent_temporary>
@@ -315,7 +316,23 @@
       <option name="project" value="LOCAL‎" />
       <updated>1733769276589</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL‎-00025" summary="tikun (in case of just number)">
+      <option name="closed" value="true" />
+      <created>1733824537271</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL‎-00025" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1733824537271</updated>
+    </task>
+    <task id="LOCAL‎-00026" summary="tikun (in case of just number)">
+      <option name="closed" value="true" />
+      <created>1733824584688</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL‎-00026" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1733824584688</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -336,7 +353,8 @@
     <MESSAGE value="Ex1+readme+Ex1.txt+package" />
     <MESSAGE value="tikun readme" />
     <MESSAGE value="tikun isNumber(b is last char)" />
-    <option name="LAST_COMMIT_MESSAGE" value="tikun isNumber(b is last char)" />
+    <MESSAGE value="tikun (in case of just number)" />
+    <option name="LAST_COMMIT_MESSAGE" value="tikun (in case of just number)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Ex1$Ex1Test.ic" NAME="Ex1Test Coverage Results" MODIFIED="1733249144548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
