@@ -21,10 +21,10 @@ public class Ex1 {
     public static int base(String num)
     {
         int index= num.indexOf('b'),base=-1;
-        if (num.length()!=(index+2)) //if we have more/less than one char for the base
-            return -1;
         if (num.indexOf('b')==-1) //if just a number without b
             return 10;
+        if (num.length()!=(index+2)) //if we have more/less than one char for the base
+            return -1;
         if ('A'<= num.charAt(index+1)&& num.charAt(index+1)<='G') //if the base is in digit(10-16)
             base= num.charAt(index+1)-'A'+10;
         else if ('2'<= num.charAt(index+1)&& num.charAt(index+1)<='9') // if the base is number(0-9)
@@ -35,7 +35,7 @@ public class Ex1 {
      * Convert the given number (num) to a decimal representation (as int).
      * It the given number is not in a valid format returns -1.
      * @param num a String representing a number in basis [2,16]
-     * @return
+     * @return num in decimal representation (as int).
      */
     public static int number2Int(String num)
     {
@@ -112,8 +112,8 @@ public class Ex1 {
         }
         for(int i = 0; i< digit; i++)
         {
-           int x=((int)(num/Math.pow(base,(digit -(i+1)))));//the valus of the digit in this index
-            num-= x* Math.pow(base,(digit -(i+1)));//subtracts from it
+           int x=((int)(num/Math.pow(base,(digit -(i+1)))));//the value of the digit in this index
+            num-= (x* Math.pow(base,(digit -(i+1))));//subtracts from it
             if (x<10)
                 ans+=((char)(x +'0'));//add the digit in case it is <10
             else
