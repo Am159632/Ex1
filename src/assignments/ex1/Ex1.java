@@ -41,13 +41,11 @@ public class Ex1 {
     {
         int ans = 0;
         int digits =num.indexOf('b'),base=base(num),x;
-        if (digits==-1) //regular number, without b
-            if (isNumber(num)) {
+        if (digits==-1 && isNumber(num)) //regular number, without b
                 digits = num.length();
-            }
         for (int i = 0; i< digits; i++)
         {
-            x= Character.getNumericValue(num.charAt(i));
+            x= Character.getNumericValue(num.charAt(i)); //If a digit, it returns its value; if a letter, it returns its value according to its Unicode(A=10...)
             ans+=x*Math.pow(base,(digits-(i+1))); //every digit, power his index
         }
         if  (!isNumber(num))
@@ -101,29 +99,29 @@ public class Ex1 {
         if(num==0)
             ans+="0";
         int digit =0;
-        if (num<0||base<2||base>16) {//if the num/base invalid
+        if (num<0||base<2||base>16) {  //if the num/base invalid
             return ans;
         }
         for(int i=0;i<num;i++)
         {
-            if (Math.pow(base,i)>num)//check how much digits the number have(until base^i>num)
+            if (Math.pow(base,i)>num) //check how much digits the number have(until base^i>num)
                 break;
             digit++;
         }
         for(int i = 0; i< digit; i++)
         {
-           int x=((int)(num/Math.pow(base,(digit -(i+1)))));//the value of the digit in this index
-            num-= (x* Math.pow(base,(digit -(i+1))));//subtracts from it
+           int x=((int)(num/Math.pow(base,(digit -(i+1))))); //the decimal value of the digit in this index
+            num-= (x* Math.pow(base,(digit -(i+1)))); //subtracts from it
             if (x<10)
-                ans+=((char)(x +'0'));//add the digit in case it is <10
+                ans+=((char)(x +'0'));
             else
-                ans+=((char)(x+'A'-10));//add the letter in case it is >10
+                ans+=((char)(x+'A'-10));
         }
         ans+='b';
         if (base<10)
-            ans+=((char)(base+'0'));//add the base in case it is <10
+            ans+=((char)(base+'0'));
         else
-            ans+=(char)(base+'A'-10);//add the base in case it is >10
+            ans+=(char)(base+'A'-10);
         return ans;
     }
     /**
@@ -134,7 +132,7 @@ public class Ex1 {
      */
     public static boolean equals(String n1, String n2) {
         boolean ans = true;
-        if (number2Int(n1)!=number2Int(n2))//if the value(in int) of the strings is equals
+        if (number2Int(n1)!=number2Int(n2))
             ans=false;
         return ans;
     }
@@ -149,7 +147,7 @@ public class Ex1 {
         int ans =0,max=number2Int(arr[0]);
         for (int i=0;i<arr.length;i++)
         {
-            if (number2Int(arr[i])>max) {//if the value of the String is bigger than max
+            if (number2Int(arr[i])>max) {
                 ans = i;
                 max = number2Int(arr[i]);
             }
