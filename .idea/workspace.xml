@@ -70,7 +70,7 @@
       <recent name="C:\Users\asafm\IdeaProjects\Ex1\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Ex1Main">
+  <component name="RunManager" selected="JUnit.Ex1Test">
     <configuration name="Ex1Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="assignments.ex1.Ex1Main" />
       <module name="Ex1" />
@@ -105,8 +105,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Ex1Main" />
         <item itemvalue="JUnit.Ex1Test" />
+        <item itemvalue="Application.Ex1Main" />
         <item itemvalue="JAR Application.Ex1Sol .jar" />
       </list>
     </recent_temporary>

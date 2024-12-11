@@ -45,7 +45,7 @@ public class Ex1Test {
     }
     @Test
     void maxIndexTest() {
-        String[] array1 ={"01b5","1b2","1",};
+        String[] array1 ={"123b7","42bG","66",};
        int max1=Ex1.maxIndex(array1);
         assertEquals(0,max1);
         String[] array2 ={"1F65bG","214134","3431GF",};
