@@ -52,7 +52,7 @@ public class Ex1Test {
         int max2=Ex1.maxIndex(array2);
         assertEquals(1,max2);
         String[] array3 ={"1F65bG","214134","3431GF",};
-        int max3=Ex1.maxIndex(array2);
+        int max3=Ex1.maxIndex(array3);
         assertFalse(max1==max3);
         assertTrue(max2==max3);
     }

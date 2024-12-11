@@ -1,97 +1,44 @@
-The assignments.ex1.Ex1.Main is working in loop while num1,num2 that we scanned are nou equals to "quit".
-The progran is scan a number (num1) in String.If num1 is "quit" the program ends the loop and printing:"quiting now...".
-but if not it print num1 in this format:
-"num1= " + num1 + " is number: " +(true/false if number) + " , value: " + [his value (-1 if invalid)].
-If num1 is invalid number the program is back to scan the first number. If valid number,it scans the second number (num2)
-and do the same.
-If num1 and num2 are valid numbers the program asked to scan int number between 2 to 16
-and print the sum and the multiplication of num1 and num2 in the base we put in this format:
-num1 + " + " + num2 + " = " + (result)
-num1 + " * " + num2 + " = " + (result)
-If the base we put don't between [2,16] the ptogram will print:"ERR: wrong base, should be [2,16], got (base)"
-and go to the beginning of the loop to scan the num1.
-Now, the program is building an array of String that his length is 4 and contains numbers
-(num1,num2,sum of the 2 numbers in the base we put,and the multiplication)
-and print the max value number in this format:"Max number over [num1,num2,sum,multi] is: " + (the number is String).
+## Functions
 
-# assignments.ex1.Ex1 Program
+1. **`base`**: Determines the base of a given number or returns `-1` if invalid.
+2. **`number2Int`**: Converts a formatted string to a decimal integer.
+3. **`isNumber`**: Checks if a string follows the valid number format.
+4. **`int2Number`**: Converts a decimal integer into a specific base.
+5. **`equals`**: Compares two numbers for equality.
+6. **`maxIndex`**: Finds the index of the largest valid number in an array.
 
-This program is an input/output application that uses JUnit to perform tests on the `assignments.ex1.Ex1` class. Below is an explanation of the program and how to use it.
+## Main Function
 
-## Main Classes
+The `main` function in **Ex1Main.java**:
 
-### assignments.ex1.Ex1Main
-This is the main class of the program, allowing the user to input numbers in strings and perform arithmetic operations on them. The program allows the user to enter two numbers and then perform addition and multiplication of these numbers in a user-specified base.
+1. Prompts the user to enter two numbers in the required format.
+2. Validates the input and converts it to decimal values.
+3. Asks for a base and performs addition and multiplication.
+4. Displays results in the specified base.
+5. Identifies the largest value among the inputs and results.
 
-#### Example Usage
-1. Running the program and using input:
-    - Enter a string as number #1 (or "quit" to end the program).
-    - Enter a string as number #2 (or "quit" to end the program).
-    - Enter a base for output (a number between 2 and 16).
+## Testing
 
-2. Example Input:
-    ```plaintext
-    Enter a string as number#1 (or "quit" to end the program):
-    1011b2
-    num1= 1011b2 is number: true , value: 11
-    Enter a string as number#2 (or "quit" to end the program):
-    1101b2
-    num2= 1101b2 is number: true , value: 13
-    Enter a base for output: (a number [2,16])
-    10
-    1011b2 + 1101b2 = 24
-    1011b2 * 1101b2 = 143
-    Max number over [1011b2,1101b2,24,143] is: 143
-    ```
+Unit tests in **Ex1Test.java** include:
 
-### assignments.ex1.Ex1Test
-This is the test class using JUnit to perform tests on the `assignments.ex1.Ex1` class. The class includes several tests such as:
-- `computeNumberTest`: Tests the conversion of numbers between different bases and checks the accuracy of the conversions.
-- `isBasisNumberTest`: Tests the validation of different string formats representing numbers.
-- `int2NumberTest`: Tests the conversion of an integer to a string in a specified base.
-- `maxIndexTest`: Tests finding the maximum value among numbers in an array of strings.
-- `baseTest`: Tests returning the base of a string number.
+1. **`computeNumberTest`**: Validates number conversion and comparison.
+2. **`isBasisNumberTest`**: Tests valid and invalid formatted numbers.
+3. **`int2NumberTest`**: Checks decimal-to-base conversions.
+4. **`maxIndexTest`**: Validates finding the largest number's index.
+5. **`baseTest`**: Tests base extraction from various inputs.
 
-## Dependencies
-The program uses JUnit for testing. Ensure JUnit is included in your project.
+### Main Example
 
-### Maven
-```xml
-<dependency>
-    <groupId>org.junit.jupiter</groupId>
-    <artifactId>junit-jupiter-engine</artifactId>
-    <version>5.7.0</version>
-    <scope>test</scope>
-</dependency>
-
-# README for Assignment: Number Converter and Calculator
-
-This project provides a Java program for handling numbers in bases [2,16]. It supports:
-1. **Validation**: Checks if a number string is in a valid format.
-2. **Conversion**: Converts numbers between bases (e.g., binary to decimal).
-3. **Arithmetic**: Performs addition and multiplication of numbers in various bases.
-4. **Utilities**: Determines number base, equality, and finds the maximum value in an array.
-
-Files:
-- `Ex1.java`: Implements the logic for conversion, validation, and operations.
-- `Ex1Main.java`: A console-based program that lets users input two numbers, validate them, perform arithmetic operations, and find the maximum among results.
-- `Ex1Test.java`: JUnit tests for validating the implementation.
-
-
-#Ex1 - Number Formatting Converter and Calculator
-
-## Overview
-This project implements a number formatting converter and calculator supporting bases [2-16]. Numbers are represented as `<number><b><base>` (e.g., `101b2`, `A1b16`). Invalid formats (e.g., `123b`, `0b1`) are rejected.
-
-## Features
-1. Validate number formats and bases.
-2. Convert numbers between bases and decimal.
-3. Perform addition and multiplication on numbers.
-4. Find the maximum number in a list.
-
-## Main Functionality
-The `Ex1Main` class provides a CLI that:
-- Accepts numbers in custom formats and validates them.
-- Performs addition and multiplication, displaying results in a user-defined base.
-- Identifies the maximum value from computed results.
-
+Ex1 class solution:
+Enter a string as number#1 (or "quit" to end the program):
+ABbD
+num1= ABbD is number: true , value: 141
+Enter a string as number#2 (or "quit" to end the program):
+1234b7
+num2= 1234b7 is number: true , value: 466
+Enter a base for output: (a number [2,16]
+12
+ABbD + 1234b7 = 427bC
+ABbD * 1234b7 = 32036bC
+Max number over [ABbD,1234b7,427bC,32036bC] is: 32036bC
+```

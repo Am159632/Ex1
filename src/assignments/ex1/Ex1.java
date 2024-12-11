@@ -67,7 +67,7 @@ public class Ex1 {
             return false;
         if (a.indexOf('b')==-1) { //regular number, without b
             for (int i = 0; i < a.length(); i++)
-                if (!(a.charAt(i) >= '0' && a.charAt(i) <= '9')||a.charAt(i)==' ')
+                if (!(a.charAt(i) >= '0' && a.charAt(i) <= '9'))
                     return false; //letter in base 10 is invalid number
             return true; //if only digit, valid number
         }
@@ -76,7 +76,7 @@ public class Ex1 {
                 letter=false;
             if ((a.charAt(i)<'0'&&a.charAt(i)>'9'))
                 digit=false;
-            if (!letter&&!digit||a.charAt(i)==' ')//if one of the chars in the string is not in A-G/b/0-9/space
+            if ((!letter&&!digit)||a.charAt(i)==' ')//if one of the chars in the string is not in A-G/b/0-9/space
                 return false;
         }
         for (int i=0;i<index;i++)
