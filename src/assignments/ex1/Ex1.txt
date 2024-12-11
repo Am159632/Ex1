@@ -1,2 +1,2 @@
 ID:207302456
-https://github.com/Am159632/assignments.ex1.Ex1.git
+https://github.com/Am159632/Ex1
