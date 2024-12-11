@@ -35,12 +35,13 @@ public class Ex1Test {
     }
     @Test
     void int2NumberTest() {
-        int n1=1324;
-        int b1=5;
-        String num1=Ex1.int2Number(n1,b1);
-        String num2=Ex1.int2Number(n1,13);
+        int n =1324;
+        int b1 =(int) (Math.random() * (16 - 2 + 1)) + 2;
+        int b2 =(int) (Math.random() * (16 - 2 + 1)) + 2;
+        String num1=Ex1.int2Number(n, b1);
+        String num2=Ex1.int2Number(n, b2);
         assertTrue(Ex1.equals(num1,num2));
-        String num3=Ex1.int2Number(1241,5);
+        String num3=Ex1.int2Number(1241, b1);
         assertFalse(Ex1.equals(num3,num1));
     }
     @Test

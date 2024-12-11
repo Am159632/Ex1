@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b1755ae-4610-423b-bfc5-92bcabde1c3f" name="Changes" comment="Text" />
+    <list default="true" id="6b1755ae-4610-423b-bfc5-92bcabde1c3f" name="Changes" comment="FixTest">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignments/ex1/Ex1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignments/ex1/Ex1Test.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -352,7 +355,23 @@
       <option name="project" value="LOCAL‎" />
       <updated>1733937166814</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL‎-00030" summary="End">
+      <option name="closed" value="true" />
+      <created>1733943471158</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL‎-00030" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1733943471158</updated>
+    </task>
+    <task id="LOCAL‎-00031" summary="FixTest">
+      <option name="closed" value="true" />
+      <created>1733943594123</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL‎-00031" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1733943594123</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -377,7 +396,9 @@
     <MESSAGE value="Testim" />
     <MESSAGE value="Readme" />
     <MESSAGE value="Text" />
-    <option name="LAST_COMMIT_MESSAGE" value="Text" />
+    <MESSAGE value="End" />
+    <MESSAGE value="FixTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="FixTest" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Ex1$Ex1Test.ic" NAME="Ex1Test Coverage Results" MODIFIED="1733249144548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
