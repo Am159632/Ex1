@@ -98,6 +98,8 @@ public class Ex1 {
      */
     public static String int2Number(int num, int base) {
         String ans ="";
+        if(num==0)
+            ans+="0";
         int digit =0;
         if (num<0||base<2||base>16) {//if the num/base invalid
             return ans;

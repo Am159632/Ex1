@@ -1,4 +1,4 @@
-## Functions
+# Functions
 
 1. **`base`**: Determines the base of a given number or returns `-1` if invalid.
 2. **`number2Int`**: Converts a formatted string to a decimal integer.
@@ -17,7 +17,7 @@ The `main` function in **Ex1Main.java**:
 4. Displays results in the specified base.
 5. Identifies the largest value among the inputs and results.
 
-## Testing
+### Testing
 
 Unit tests in **Ex1Test.java** include:
 
@@ -27,7 +27,7 @@ Unit tests in **Ex1Test.java** include:
 4. **`maxIndexTest`**: Validates finding the largest number's index.
 5. **`baseTest`**: Tests base extraction from various inputs.
 
-### Main Example
+#### Main Example
 
 Ex1 class solution:
 Enter a string as number#1 (or "quit" to end the program):
