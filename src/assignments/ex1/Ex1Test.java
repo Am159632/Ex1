@@ -7,6 +7,22 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * This JUnit class represents a very partial test class for assignments.ex1.Ex1.
  */
 public class Ex1Test {
+
+    @Test
+    void baseTest(){
+        String[] good = {"0b3","12345","GbF","b2","-2bG","1F","G23 bC",""};
+        for(int i=0;i<good.length;i++) {
+            int ok = Ex1.base(good[i]);
+            assertTrue(ok!=-1);
+        }
+        String[] not_good = {"-2b12","123b-1","0b1"};
+        for(int i=0;i<not_good.length;i=i+1) {
+            int not_ok = Ex1.base(not_good[i]);
+            assertEquals(not_ok,-1);
+        }
+        assertEquals(10,Ex1.base("12345"));
+    }
+
     @Test
     void computeNumberTest() {
         String s2 = "1011b2";
@@ -33,17 +49,20 @@ public class Ex1Test {
             assertFalse(not_ok);
         }
     }
+
     @Test
     void int2NumberTest() {
-        int n =1324;
+        int n1 =1500;
+        int n2=(int) (Math.random() * (1499-0+1)) ;
         int b1 =(int) (Math.random() * (16 - 2 + 1)) + 2;
         int b2 =(int) (Math.random() * (16 - 2 + 1)) + 2;
-        String num1=Ex1.int2Number(n, b1);
-        String num2=Ex1.int2Number(n, b2);
+        String num1=Ex1.int2Number(n1, b1);
+        String num2=Ex1.int2Number(n1, b2);
         assertTrue(Ex1.equals(num1,num2));
-        String num3=Ex1.int2Number(1241, b1);
+        String num3=Ex1.int2Number(n2, b1);
         assertFalse(Ex1.equals(num3,num1));
     }
+
     @Test
     void maxIndexTest() {
         String[] array1 ={"123b7","42bG","66",};
@@ -57,19 +76,4 @@ public class Ex1Test {
         assertFalse(max1==max3);
         assertTrue(max2==max3);
     }
-    @Test
-    void baseTest(){
-        String[] good = {"0b3","12345","GbF","b2","-2bG","1F","G23 bC",""};
-        for(int i=0;i<good.length;i++) {
-            int ok = Ex1.base(good[i]);
-            assertTrue(ok!=-1);
-        }
-        String[] not_good = {"-2b12","123b-1","0b1"};
-        for(int i=0;i<not_good.length;i=i+1) {
-            int not_ok = Ex1.base(not_good[i]);
-            assertEquals(not_ok,-1);
-        }
-        assertEquals(10,Ex1.base("12345"));
-    }
-
 }

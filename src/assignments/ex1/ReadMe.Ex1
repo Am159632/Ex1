@@ -21,11 +21,11 @@ The `main` function in **Ex1Main.java**:
 
 Unit tests in **Ex1Test.java** include:
 
-1. **`computeNumberTest`**: Validates number conversion and comparison.
-2. **`isBasisNumberTest`**: Tests valid and invalid formatted numbers.
-3. **`int2NumberTest`**: Checks decimal-to-base conversions.
-4. **`maxIndexTest`**: Validates finding the largest number's index.
-5. **`baseTest`**: Tests base extraction from various inputs.
+1. **`baseTest`**: Tests base extraction from various inputs.
+2. **`computeNumberTest`**: Validates number conversion and comparison.
+3. **`isBasisNumberTest`**: Tests valid and invalid formatted numbers.
+4. **`int2NumberTest`**: Checks decimal-to-base conversions.
+5. **`maxIndexTest`**: Validates finding the largest number's index.
 
 #### Main Example
 
